@@ -27,7 +27,7 @@
 				<td>${examination.id}</td>
 				<td>${examination.patient.petname}</td>
 				<td>${examination.patient.ownername}</td>
-				<td>${examination.date}</td>
+				<td><fmt:formatDate pattern="dd/MM/yyyy" value="${examination.date}"/></td>
 				<td>${examination.totalcost}</td>
 				<td>${examination.diagnosis.name}</td>
 				<td>
@@ -40,7 +40,7 @@
 		</tbody>
 		
 	</table>
-		<!--<div><a class="btn btn-success" href="/new">Add New Patient</a></div>-->
+		<div><a class="btn btn-success" href="/new-examination">Add New Examination</a></div>
 	
 	</div>
 	<%@ include file="common/footer.jsp" %>
