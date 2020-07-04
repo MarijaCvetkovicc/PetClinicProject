@@ -1,6 +1,7 @@
 package com.petclinic.second.demo.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,4 +20,13 @@ public class TreatmentService {
 	public List<Treatment> listAllTreatments(){
 		return repo.findAll();
 	}
+
+
+
+	public float getPriceFromId(Long id) {
+		Optional<Treatment> t=repo.findById(id);
+		return t.get().getPrice();
+	}
+	
+	
 }

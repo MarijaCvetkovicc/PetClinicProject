@@ -12,11 +12,8 @@
 <title>Vet Clinic</title>
 <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
 	rel="stylesheet">
-	<script>
-    $(function () {
-        $("#datepicker").datepicker();
-    });
+	    
+   	
 	
-	</script>
 </head>
 <body>

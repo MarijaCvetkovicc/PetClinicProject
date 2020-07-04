@@ -13,7 +13,7 @@
 		<form:form action="save" method="post" modelAttribute="patient">
 
 		<fieldset class="form-group">
-				<form:label  path="petname">ID Patient:</form:label>
+				<form:label  path="id">ID Patient:</form:label>
 				${patient.id} <form:hidden path="id"/>
 			</fieldset>
 			<fieldset class="form-group">

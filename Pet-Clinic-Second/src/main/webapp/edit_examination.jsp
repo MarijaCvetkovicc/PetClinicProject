@@ -2,7 +2,7 @@
 <%@ include file="common/navigation.jsp" %>
 	<div class="jumbotron text-center">
 	 <h1>Examinations</h1>
-  <p>Creating new examination!</p>
+  <p>Edit examination!</p>
 	</div>
 
 	<div align="center" class="container">
@@ -10,6 +10,10 @@
 
 		<form:form action="saveexamination" method="post" modelAttribute="examination">
 
+	<fieldset class="form-group">
+				<form:label  path="id">ID Examination:</form:label>
+				${examination.id} <form:hidden path="id"/>
+			</fieldset>
 			<fieldset class="form-group">
 				<form:label  path="date" >Date:</form:label>
 				<form:input path="date" type="text" class="form-control" requried="required" />

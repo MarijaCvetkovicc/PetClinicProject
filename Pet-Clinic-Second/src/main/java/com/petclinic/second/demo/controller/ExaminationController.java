@@ -12,6 +12,7 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -61,14 +62,34 @@ public class ExaminationController {
 		ModelAndView mav =new ModelAndView("examination_search.jsp");
 		List<Examination> listSearchExam=service.searchExamination(keyword);
 		mav.addObject("listSearchExam", listSearchExam);
+	
 		return mav;
 	}
 	
 	@RequestMapping("/new-examination")
 	public String newExaminationForm(Map<String, Object> model) {
 		Examination examination=new Examination();
-		examination.setTotalcost(0);
+		
 		model.put("examination", examination);
 		return "new_examination.jsp";
+	}
+	
+	@RequestMapping(value="/saveexamination", method = RequestMethod.POST)
+	public String saveExamination(@ModelAttribute("examination") Examination examination) {
+		
+		service.save(examination);
+		
+		return "redirect:/examination";
+		
+	}
+	
+	@RequestMapping("/edit-examination")
+	public ModelAndView editexaminationForm(@RequestParam long id) {
+		ModelAndView mav=new ModelAndView("edit_examination.jsp");
+		Examination examination=service.get(id);
+		mav.addObject("examination",examination);
+		
+		
+		return mav;
 	}
 }

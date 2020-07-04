@@ -2,13 +2,17 @@
 <%@ include file="common/navigation.jsp" %>
 <div class="jumbotron text-center">
   <h1>Examinations</h1>
-  <p>Add Edit or Delete examination!</br> SEARCH examination using pet name or owner name</p>
+  <p>Add Edit or Delete examination!<br/> SEARCH examination using pet name or owner name</p>
 </div>
 	<div class="container" align="center">
 	<form method="get" action="search">
 		<input class="form-control" type="text" name="keyword" placeholder="Search" aria-label="Search">
-		<input type="submit" value="Search"/>
+		<br/>
+		<div>
+		<input type="submit" class="btn btn-success" value="Search"/>
+		</div>
 	</form>
+	<br/>
 	<table border="1" class="table table-striped">
 		<thead>
 		<tr>
@@ -31,8 +35,8 @@
 				<td>${examination.totalcost}</td>
 				<td>${examination.diagnosis.name}</td>
 				<td>
-				<!-- <a class="btn btn-info" href="edit-patient?id=${patient.id} ">	Edit </a> -->
-			<!--	<a class="btn btn-danger" href="delete-patient?id=${patient.id} ">	Delete </a> -->
+				 <a class="btn btn-info" href="edit-examination?id=${examination.id} ">	Edit </a>
+			 <a class="btn btn-info" href="view-items-examination?id=${examination.id} "> View Items </a> 
 				
 				 </td>
 			</tr>
