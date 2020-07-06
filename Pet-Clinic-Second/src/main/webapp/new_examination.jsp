@@ -13,7 +13,7 @@
 			<fieldset class="form-group">
 				<form:label  path="date" >Date:</form:label>
 				<form:input path="date" type="text" class="form-control" requried="required" />
-				
+				<form:errors path="date" cssClass="text-warning"/>
 			</fieldset>
 			<fieldset class="form-group">
 				<form:label path="totalcost">Total cost:</form:label>

@@ -9,12 +9,16 @@
 	<div class="container" align="center">
 	
 	<br/>
+	 <c:if test="${not empty message}">
+            <div class="alert alert-info" role="alert mb-2">${message}</div>
+        </c:if>
 	<table border="1" class="table table-striped">
 		<thead>
 		<tr>
 			<th>ID</th>
 			<th>AMOUNT</th>
 			<th>TREATMENT</th>
+			<th>TREATMENT PRICE</th>
 			<th> ACTION </th>
 		</tr>
 		<thead>

@@ -7,7 +7,9 @@
 	
 
 	  $( function() {
-		    $( "#date" ).datepicker();
+		    $( "#date" ).datepicker({
+		    	 format: 'yyyy/mm/dd'
+			    	 });
 		  } );
 	
 	</script>

@@ -5,7 +5,9 @@
   <p>Add Edit or Delete patient!</p>
 </div>
 	<div class="container" align="center">
-	
+	 <c:if test="${not empty message}">
+            <div class="alert alert-info" role="alert mb-2">${message}</div>
+        </c:if>
 	<table border="1" class="table table-striped">
 		<thead>
 		<tr>

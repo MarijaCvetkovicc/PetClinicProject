@@ -2,7 +2,7 @@
 <%@ include file="common/navigation.jsp" %>
 <div class="jumbotron text-center">
   <h1>Examinations</h1>
-  <p>Add Edit or Delete examination!<br/> SEARCH examination using pet name or owner name</p>
+  <p>Add or Edit  examination!<br/> SEARCH examination using pet name or owner name!</p>
 </div>
 	<div class="container" align="center">
 	<form method="get" action="search">
@@ -13,6 +13,11 @@
 		</div>
 	</form>
 	<br/>
+	
+	 <c:if test="${not empty message}">
+            <div class="alert alert-info" role="alert mb-2">${message}</div>
+        </c:if>
+        
 	<table border="1" class="table table-striped">
 		<thead>
 		<tr>
@@ -31,7 +36,7 @@
 				<td>${examination.id}</td>
 				<td>${examination.patient.petname}</td>
 				<td>${examination.patient.ownername}</td>
-				<td><fmt:formatDate pattern="dd/MM/yyyy" value="${examination.date}"/></td>
+				<td><fmt:formatDate pattern="yyyy/MM/dd" value="${examination.date}"/></td>
 				<td>${examination.totalcost}</td>
 				<td>${examination.diagnosis.name}</td>
 				<td>

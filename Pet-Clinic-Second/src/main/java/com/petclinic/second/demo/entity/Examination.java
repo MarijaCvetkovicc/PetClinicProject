@@ -9,6 +9,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotBlank;
+import org.springframework.format.annotation.DateTimeFormat;
 
 
 
@@ -18,6 +22,10 @@ public class Examination {
 	 	@Id
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	    private Long id;
+	 	
+	 	
+	 	@DateTimeFormat(pattern = "yyyy/MM/dd" )
+	 	@NotNull(message = "Chose date ")
 	 	private Date date;
 	 	private float totalcost;
 	 	

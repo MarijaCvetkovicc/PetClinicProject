@@ -17,6 +17,7 @@
 			<fieldset class="form-group">
 				<form:label path="amount">Amount of tetments:</form:label>
 				<form:input path="amount"  class="form-control" />
+				<form:errors path="amount" cssClass="text-warning"/>
 			</fieldset>
 			<fieldset class="form-group">
 				<form:label path="treatment.id">Treatment:</form:label>

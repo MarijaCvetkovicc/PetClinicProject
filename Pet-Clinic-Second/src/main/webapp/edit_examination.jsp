@@ -8,7 +8,7 @@
 	<div align="center" class="container">
 
 
-		<form:form action="saveexamination" method="post" modelAttribute="examination">
+		<form:form action="editexamination" method="post" modelAttribute="examination">
 
 	<fieldset class="form-group">
 				<form:label  path="id">ID Examination:</form:label>
@@ -17,7 +17,7 @@
 			<fieldset class="form-group">
 				<form:label  path="date" >Date:</form:label>
 				<form:input path="date" type="text" class="form-control" requried="required" />
-				
+				<form:errors path="date" cssClass="text-warning"/>
 			</fieldset>
 			<fieldset class="form-group">
 				<form:label path="totalcost">Total cost:</form:label>

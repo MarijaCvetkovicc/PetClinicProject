@@ -6,6 +6,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
 public class Patient {
@@ -13,14 +17,29 @@ public class Patient {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	
+	@NotBlank
 	private String petname;
+	
+	
+	@NotBlank
 	private String ownername;
+	
+	
+	 @Size(min = 9, message = "Name must be greater than 9 numbers")
 	private String number;
+	
 	@ManyToOne
 	@JoinColumn(name="id_veterinarian ", nullable = false)
 	private Veterinarian veterinarian;
 	
 	
+	
+	public Patient() {
+		
+	}
+
 	public void setVeterinarian(Veterinarian veterinarian) {
 		this.veterinarian = veterinarian;
 	}
